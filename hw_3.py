@@ -50,7 +50,7 @@ def display_log_counts(counts: Dict[str, int]) -> None:
     print("Рівень логування | Кількість")
     print("-----------------|----------")
 
-    for level, count in sorted(counts.items()):
+    for level, count in counts.items():
         print(f"{level:<16} | {count}")
 
 
@@ -72,7 +72,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Парсер логів")
     parser.add_argument("file", help="Шлях до лог-файлу")
     parser.add_argument(
-        "--level",
+        "level",nargs="?", default=None,
         help="Фільтр рівня логів (наприклад: INFO, ERROR)",
     )
 

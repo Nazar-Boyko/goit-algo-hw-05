@@ -61,9 +61,6 @@ def show_phone(args: list[str], contacts: dict) -> str:
     """
     name = args[0]
 
-    if name not in contacts:
-        raise KeyError
-
     return contacts[name]
 
 

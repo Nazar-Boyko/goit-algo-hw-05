@@ -9,7 +9,8 @@ def generator_numbers(text: str) -> Iterator[float]:
     :param text: Відний рядок
     :return: Генератор числе типу float
     '''
-    for word in text.split():
+    words = text.split()
+    for word in words[1:-1]:
         try:
             yield float(word)
         except ValueError:
